@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar danger>
+    <ion-title>Settings</ion-title>
+    <ion-buttons end>
+      <button (click)="close()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="settings">
+  <ion-card>
+    <ion-card-header>
+      About
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Giflist</strong> is a client for <strong>reddit</strong>
+      that will endlessly <strong>stream GIFs</strong> from <strong>any
+      subreddit that predominantly contains gifs</strong>. By default
+      it uses the popular <strong>gifs</strong> subreddit, but you can
+      change this to whatever you like, e.g: perfectloops, me_irl,
+      chemicalreactiongifs.</p>
+      <br />
+      <p>To play a GIF, just tap it. To view the original submission for
+      any GIF, just tap the title section and it will open in reddit.
+      You can configure some settings for the application below.
+      Enjoy!</p>
+    </ion-card-content>
+  </ion-card>
+  <h3>Subreddit</h3>
+  <ion-input type="text" placeholder="enter" [(ngModel)]="subreddit"></ion-input>
+  <h3>Sort</h3>
+  <ion-segment danger [(ngModel)]="sort">
+    <ion-segment-button value="hot">
+      Hot
+    </ion-segment-button>
+    <ion-segment-button value="top">
+      Top
+    </ion-segment-button>
+    <ion-segment-button value="new">
+      New
+    </ion-segment-button>
+  </ion-segment>
+  <h3>Per page</h3>
+  <ion-segment danger [(ngModel)]="perPage">
+    <ion-segment-button value="5">
+      5
+    </ion-segment-button>
+    <ion-segment-button value="10">
+      10
+    </ion-segment-button>
+    <ion-segment-button value="15">
+      15
+    </ion-segment-button>
+  </ion-segment>
+  <button danger block (click)="save()">
+    Save Settings
+  </button>
+</ion-content>
