@@ -2,5 +2,11 @@
   "name": "giflist",
   "app_id": "",
   "v2": true,
-  "typescript": true
+  "typescript": true,
+  "proxies": [
+    {
+      "path": "/r",
+      "proxyUrl": "https://www.reddit.com/r/"
+    }
+  ]
 }
